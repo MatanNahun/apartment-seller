@@ -22,5 +22,8 @@ const findRelevantApts = function (
 
   immediate = !immediate[0].checked;
   parking = !parking[0].checked;
-  return immediate ? relevantApts : relevantApts.filter((a) => a.immediate);
+  return (
+    immediate ? relevantApts : relevantApts.filter((a) => a.immediate),
+    parking ? relevantApts : relevantApts.filter((a) => a.parking)
+  );
 };

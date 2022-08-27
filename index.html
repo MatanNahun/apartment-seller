@@ -65,11 +65,39 @@
 
     <div id="results"></div>
 
-    <!-- Your Code Here -->
-    <!-- You should start doing handlebar stuff here -->
-    <!-- Your Code Here -->
-
-    <div>check</div>
+    <script id="apartments-template" type="text/x-handlebars-template">
+      <div class="label">
+        {{#if apartments}}
+          {{#each apartments}}
+            <div class="result">
+              <div class="l-addr">Adress:</div>
+              <div class="addr">{{this.address}}</div>
+              <div class="l-price">Price:</div>
+              <div class="price">{{this.price}}</div>
+              <div class="l-rooms">Rooms:</div>
+              <div class="rooms">{{this.rooms}} </div>
+              {{#each features}}
+                <li>{{this}}</li>
+              {{/each}}
+              {{#if immediate}}
+                <div class="l-immediate"> immediate:</div>
+                <div
+                  class="immediate"
+                >{{this.contactDetails.name}}-{{this.contactDetails.email}}</div>
+              {{/if}}
+              {{#if parking}}
+                <div class="l-park"> Parking: </div>
+                <div class="parking">
+                  <i class="fa-solid fa-circle-parking"></i></div>
+              {{/if}}
+              <img src={{this.img}} />
+            </div>
+          {{/each}}
+        {{else}}
+          <div class="error">there are no matching results</div>
+        {{/if}}
+      </div>
+    </script>
 
     <script
       src="https://code.jquery.com/jquery-3.3.1.js"
