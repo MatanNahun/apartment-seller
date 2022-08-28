@@ -131,6 +131,7 @@ button:active {
 }
 
 .result > .l-immediate {
+  float: right;
 }
 
 .result > .address {
@@ -150,6 +151,7 @@ button:active {
 }
 
 .result > .immediate {
+  float: right;
 }
 
 .no-match {
@@ -160,8 +162,4 @@ button:active {
   padding: 10px;
   border-radius: 5px;
   font-family: "Raleway", sans-serif;
-}
-
-.error {
-  color: red;
 }
